@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <audio hidden src="../audio/jatuh_cinta_manis.mp3" id="audio"></audio>
+      <div class="lirikContainer">
+        <h1 id="teks-lirik"></h1>
+      </div>
+
+      <div class="container">
+        <img
+          src="https://i.pinimg.com/originals/8b/dd/5c/8bdd5cad0dca933d7ef52b353ef09aea.gif"
+          alt=""
+        />
+        <div class="content">
+          <h1>Aloo! Bubu</h1>
+          <p>Kamu tau ga "J" singkatan dari apa?</p>
+          <div class="input">
+            <input id="jawaban" type="text" />
+            <button onclick="cekJawaban()">cek</button>
+          </div>
+          <button class="nyerah" onclick="nyerah()">Nyerah</button>
+        </div>
+      </div>
+      <div class="overlay"></div>
+      <div class="modal">
+        <button class="tutup" onclick="tutupModal()">X</button>
+        <img id="gambar" src="" alt="" />
+        <h3 id="teks"></h3>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

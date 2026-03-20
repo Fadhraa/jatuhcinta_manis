@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    /* Mencegah scroll saat ada animasi hati jatuh */
+}
+
+main {
+    background-color: bisque;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lirik {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+#teks-lirik {
+    text-align: center;
+}
+
+.char {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeHuruf 0.5s forwards;
+}
+
+@keyframes fadeHuruf {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hilangHuruf {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    height: 480px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: munculMulus 1s ease-out forwards;
+}
+
+@keyframes munculMulus {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.container img {
+    width: auto;
+    height: 50%;
+    object-fit: cover;
+    animation: ngambang 3s ease-in-out infinite;
+}
+
+@keyframes ngambang {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.content {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.modal {
+    position: absolute;
+    width: 420px;
+    height: 320px;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.modal img {
+    width: 220px;
+    height: auto;
+    object-fit: cover;
+}
+
+.tutup {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(237, 178, 84);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: white;
+}
+
+.overlay.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.input {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.input input {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.input button {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(237, 178, 84);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input button:hover,
+.nyerah:hover,
+.tutup:hover {
+    transform: scale(1.05);
+    background-color: rgb(215, 155, 60);
+    box-shadow: 0 4px 10px rgba(237, 178, 84, 0.4);
+}
+
+.nyerah {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(237, 178, 84);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Animasi Hati Jatuh */
+.heart {
+    position: absolute;
+    top: -10%;
+    color: #8b4513;
+    /* Coklat yang senada dengan bisque */
+    font-size: 24px;
+    animation: fall linear forwards;
+    z-index: 100;
+    filter: drop-shadow(0 0 5px rgba(139, 69, 19, 0.4));
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
